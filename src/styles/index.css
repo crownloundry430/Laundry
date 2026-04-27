@@ -1,0 +1,40 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@layer base {
+  .dark {
+    background-color: #020617 !important;
+    color: #f8fafc !important;
+  }
+
+  body {
+    transition-property: color, background-color, border-color;
+    transition-duration: 300ms;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media print {
+  html, body, .dark {
+    background-color: white !important;
+    color: black !important;
+  }
+  nav, aside, header, .no-print, button {
+    display: none !important;
+  }
+  .printable-area {
+    display: block !important;
+    width: 100% !important;
+    padding: 20px !important;
+  }
+}
